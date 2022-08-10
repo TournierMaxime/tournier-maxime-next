@@ -1,26 +1,1371 @@
-html,
-body {
-  padding: 0;
+@charset "UTF-8";
+/*
+mixin qui regroupe les propriétés majeurs de flexbox
+*/
+/*
+Largeur et hauteur
+*/
+/*
+Marges intérieurs et extérieurs 
+  - allDirections = marges globales ex : (margin:0;)
+  - specificDirections = marges spécifiques ex : (margin-left:0;)
+  - m-amount est la taille 
+*/
+/*
+Regroupe les border-radius top ou bottom
+*/
+/*
+Mixin pour les titres ou paragraphes
+*/
+/*
+Positionnement d'un élément avec directions 
+*/
+/*Ajuste la couleur du texte par rapport à la luminosité du background*/
+/*
+mixin qui regroupe les propriétés majeurs de flexbox
+*/
+/*
+Largeur et hauteur
+*/
+/*
+Marges intérieurs et extérieurs 
+  - allDirections = marges globales ex : (margin:0;)
+  - specificDirections = marges spécifiques ex : (margin-left:0;)
+  - m-amount est la taille 
+*/
+/*
+Regroupe les border-radius top ou bottom
+*/
+/*
+Mixin pour les titres ou paragraphes
+*/
+/*
+Positionnement d'un élément avec directions 
+*/
+/*Ajuste la couleur du texte par rapport à la luminosité du background*/
+.body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  background-color: white;
+  font-family: Source Sans Pro;
 }
 
-a {
-  color: inherit;
+#__next {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.pJustify {
+  text-align: justify;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: Source Sans Pro;
+  color: rgb(98, 250, 214);
+}
+
+.widthHeight {
+  width: 100%;
+  height: auto;
+}
+
+.link a {
   text-decoration: none;
+  margin: 0 1em 0 0;
+  padding: 0;
 }
 
-* {
+.mainIndex {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 25em;
+  border-radius: 1em;
+  margin: 25em 0 5em 0;
+  padding: 0;
+  flex: auto;
+}
+
+.list ul {
+  list-style-type: none;
+  margin: 1em;
+  padding: 1em;
+}
+
+.socialNetworks {
+  border-left: 1px solid rgb(98, 250, 214);
+  position: fixed;
+  bottom: 10em;
+  left: 10em;
+}
+.socialNetworks li {
+  margin: 0 0 2em 0;
+  padding: 0;
+}
+.socialNetworks li svg {
+  color: rgb(98, 250, 214);
+  width: 3em;
+  height: auto;
+}
+
+.intro {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: flex-start;
+  display: flex;
+  min-height: 70vh;
+}
+.intro .myNameIs {
+  color: rgb(98, 250, 214);
+}
+.intro .name {
+  color: rgb(204, 214, 246);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 5em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  margin: 0 0 0.3em 0;
+  padding: 0;
+}
+.intro .job {
+  color: rgb(112, 123, 151);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 4em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  margin: 0;
+  padding: 0;
+}
+
+.pIntro {
+  color: rgb(98, 250, 214);
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: Source Sans Pro;
+  width: 70%;
+  height: auto;
+}
+
+.aboutMe {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: space-between;
+  align-items: normal;
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin: 0 0 10em 0;
+  padding: 0;
+}
+.aboutMe__P {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  width: 70%;
+  height: auto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.2em;
+  line-height: 1.5;
+  font-family: Source Sans Pro;
+  color: rgb(204, 214, 246);
+}
+.aboutMe .imageContainer {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  width: 25%;
+  height: 100%;
+  background-color: rgb(98, 250, 214);
+  border-radius: 0.2em;
+  margin: 0;
+  padding: 0.2em;
+}
+.aboutMe .imageContainer .imageProfil {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%) contrast(1);
+  mix-blend-mode: multiply;
+  border-radius: 0.2em;
+}
+
+/*
+mixin qui regroupe les propriétés majeurs de flexbox
+*/
+/*
+Largeur et hauteur
+*/
+/*
+Marges intérieurs et extérieurs 
+  - allDirections = marges globales ex : (margin:0;)
+  - specificDirections = marges spécifiques ex : (margin-left:0;)
+  - m-amount est la taille 
+*/
+/*
+Regroupe les border-radius top ou bottom
+*/
+/*
+Mixin pour les titres ou paragraphes
+*/
+/*
+Positionnement d'un élément avec directions 
+*/
+/*Ajuste la couleur du texte par rapport à la luminosité du background*/
+.header,
+.header--isActive {
+  box-shadow: 0 0 20px -10px;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: #f0f0f0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+}
+.header .navbar,
+.header--isActive .navbar {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 6em;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+.header .navbar .navLeft,
+.header--isActive .navbar .navLeft {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  margin: 0 1em;
+  padding: 0;
+}
+.header .navbar .navLeft .logo,
+.header--isActive .navbar .navLeft .logo {
+  width: 3em;
+  height: auto;
+}
+.header .navbar .navRight,
+.header--isActive .navbar .navRight {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.header .navbar .navRight .navLink,
+.header--isActive .navbar .navRight .navLink {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  margin: 0 1em;
+  padding: 0;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.header .navbar .navRight .navLink:hover,
+.header--isActive .navbar .navRight .navLink:hover {
+  transition: all 0.5s;
+  color: rgb(0, 94, 255);
+}
+.header .navbar .navRight .burger,
+.header--isActive .navbar .navRight .burger {
+  color: rgb(0, 81, 255);
+  width: 2em;
+  height: auto;
+}
+
+.header--isActive {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+}
+.header--isActive .ulBurger {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.header--isActive .ulBurger li {
+  margin: 0;
+  padding: 1em 0;
+}
+.header--isActive .ulBurger li .navbarLinkBurger {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  margin: 0 1em;
+  padding: 0;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media screen and (min-width: 769px) {
+  .navRight {
+    margin: 0 1em;
+    padding: 0;
+  }
+  .navRight .burger {
+    display: none;
+  }
+}
+.project {
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  border-bottom: 0px solid rgb(98, 250, 214);
+}
+
+.project:hover {
+  border-bottom: 4px solid rgb(98, 250, 214);
+}
+
+/*
+mixin qui regroupe les propriétés majeurs de flexbox
+*/
+/*
+Largeur et hauteur
+*/
+/*
+Marges intérieurs et extérieurs 
+  - allDirections = marges globales ex : (margin:0;)
+  - specificDirections = marges spécifiques ex : (margin-left:0;)
+  - m-amount est la taille 
+*/
+/*
+Regroupe les border-radius top ou bottom
+*/
+/*
+Mixin pour les titres ou paragraphes
+*/
+/*
+Positionnement d'un élément avec directions 
+*/
+/*Ajuste la couleur du texte par rapport à la luminosité du background*/
+.btn {
+  margin: 0;
+  padding: 1em;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: rgb(0, 81, 255);
+  border: none;
+  box-shadow: 0 5px 20px -5px;
+  border-radius: 0.2em;
+  transition: all 1s;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(10px);
+}
+
+.icons {
+  width: 36px;
+  height: 36px;
+  color: rgb(0, 81, 255);
+}
+
+/*
+mixin qui regroupe les propriétés majeurs de flexbox
+*/
+/*
+Largeur et hauteur
+*/
+/*
+Marges intérieurs et extérieurs 
+  - allDirections = marges globales ex : (margin:0;)
+  - specificDirections = marges spécifiques ex : (margin-left:0;)
+  - m-amount est la taille 
+*/
+/*
+Regroupe les border-radius top ou bottom
+*/
+/*
+Mixin pour les titres ou paragraphes
+*/
+/*
+Positionnement d'un élément avec directions 
+*/
+/*Ajuste la couleur du texte par rapport à la luminosité du background*/
+/** {
   box-sizing: border-box;
+}*/
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: rgb(0, 81, 255);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.timeline__container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 41%;
+}
+
+/* The circles on the timeline */
+.timeline__container::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  right: -39px;
+  background-color: rgb(0, 81, 255);
+  border: 4px solid white;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid grey;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid grey;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -12px;
+}
+
+/* The actual content */
+.timeline__container--content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+}
+.timeline__container--content .timeline__Heading {
+  color: rgb(204, 214, 246);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 0;
+  font-family: Source Sans Pro;
+}
+.timeline__container--content .timeline__List {
+  margin: 0;
+  padding: 0;
+}
+.timeline__container--content .timeline__List .timeline__List--Item {
+  color: rgb(0, 81, 255);
+}
+.timeline__container--content .timeline__List .timeline__List--Item .timeline__SubHeading {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.9em;
+  line-height: 1.5;
+  font-family: Source Sans Pro;
+  margin: 0;
+  padding: 0;
+}
+.timeline__container--content .timeline__List .timeline__List--Item .timeline__SubHeading svg {
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  padding: 0 0.5em 0 0;
+}
+.timeline__container--content .timeline__P {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: Source Sans Pro;
+  color: black;
+}
+
+/*
+mixin qui regroupe les propriétés majeurs de flexbox
+*/
+/*
+Largeur et hauteur
+*/
+/*
+Marges intérieurs et extérieurs 
+  - allDirections = marges globales ex : (margin:0;)
+  - specificDirections = marges spécifiques ex : (margin-left:0;)
+  - m-amount est la taille 
+*/
+/*
+Regroupe les border-radius top ou bottom
+*/
+/*
+Mixin pour les titres ou paragraphes
+*/
+/*
+Positionnement d'un élément avec directions 
+*/
+/*Ajuste la couleur du texte par rapport à la luminosité du background*/
+.heroIntro {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url("../public/assets/images/common-bg.svg");
+  position: relative;
+}
+.heroIntro__content {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: auto;
+  max-width: 90em;
+}
+.heroIntro__content .heading1 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 4em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  margin: 0 0 0.2em 0;
+  padding: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.heroIntro__content .heading2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 3em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  margin: 0 0 0.2em 0;
+  padding: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.heroIntro__content .links {
+  margin: 1em 0;
+  padding: 0;
+}
+.heroIntro__content p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5em;
+  line-height: 1.5;
+  font-family: Source Sans Pro;
+  text-align: justify;
+  width: 50%;
+  height: auto;
+}
+
+.heroAboutMe {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 10em 0;
+}
+.heroAboutMe__content {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: center;
+  display: flex;
+  text-align: justify;
+}
+.heroAboutMe__content .container {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: space-between;
+  align-items: normal;
+  display: flex;
+  width: 90%;
+  height: auto;
+  margin: 2em 0 0 0;
+  padding: 0;
+  max-width: 90em;
+}
+.heroAboutMe__content .container__left {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  width: 50%;
+  height: auto;
+  margin: 1em;
+  padding: 0;
+}
+.heroAboutMe__content .container__left p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5em;
+  line-height: 1.5;
+  font-family: Source Sans Pro;
+}
+.heroAboutMe__content .container__right {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  width: 50%;
+  height: auto;
+  margin: 1em;
+  padding: 0;
+}
+.heroAboutMe__content .container__right ul {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  list-style-type: none;
+  margin: 0 0.5em;
+  padding: 0;
+}
+.heroAboutMe__content .container__right ul li {
+  margin: 1em 0;
+  padding: 0.5em;
+}
+.heroAboutMe__content .container__right ul li span {
+  background-color: rgba(153, 153, 153, 0.2);
+  color: #666;
+  text-transform: uppercase;
+  border-radius: 0.2em;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  width: 4em;
+  height: auto;
+  margin: 0;
+  padding: 0.5em;
+}
+
+.heroProjects {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 10em 0;
+}
+.heroProjects__content {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: center;
+  display: flex;
+  text-align: justify;
+}
+.heroProjects__content .container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: space-between;
+  align-items: normal;
+  display: flex;
+  width: 90%;
+  height: auto;
+  margin: 2em 0 0 0;
+  padding: 0;
+  max-width: 90em;
+}
+.heroProjects__content .container__left {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  width: 50%;
+  height: auto;
+  margin: 1em;
+  padding: 0;
+}
+.heroProjects__content .container__left p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5em;
+  line-height: 1.5;
+  font-family: Source Sans Pro;
+}
+.heroProjects__content .container__right {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 40%;
+  height: auto;
+  margin: 1em;
+  padding: 0;
+}
+.heroProjects__content .container__right ul {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  list-style-type: none;
+  margin: 0 0.5em;
+  padding: 0;
+}
+.heroProjects__content .container__right ul li {
+  margin: 1em 0;
+  padding: 0.5em;
+}
+.heroProjects__content .container__right ul li span {
+  background-color: rgba(153, 153, 153, 0.2);
+  color: #666;
+  text-transform: uppercase;
+  border-radius: 0.2em;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  width: 4em;
+  height: auto;
+  margin: 0;
+  padding: 0.5em;
+}
+
+.heroCareer {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 10em 0;
+}
+.heroCareer__content {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: center;
+  display: flex;
+  text-align: justify;
+}
+.heroCareer__content .container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: space-between;
+  align-items: normal;
+  display: flex;
+  width: 90%;
+  height: auto;
+  margin: 2em 0 0 0;
+  padding: 0;
+  max-width: 90em;
+}
+.heroCareer__content .container__left {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  width: 45%;
+  height: auto;
+  margin: 1em;
+  padding: 0;
+}
+.heroCareer__content .container__left p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5em;
+  line-height: 1.5;
+  font-family: Source Sans Pro;
+}
+.heroCareer__content .container__right {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 50%;
+  height: auto;
+  margin: 1em;
+  padding: 0;
+}
+.heroCareer__content .container__right ul {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  list-style-type: none;
+  margin: 0 0.5em;
+  padding: 0;
+}
+.heroCareer__content .container__right ul li {
+  margin: 1em 0;
+  padding: 0.5em;
+}
+.heroCareer__content .container__right ul li span {
+  background-color: rgba(153, 153, 153, 0.2);
+  color: #666;
+  text-transform: uppercase;
+  border-radius: 0.2em;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  width: 4em;
+  height: auto;
+  margin: 0;
+  padding: 0.5em;
+}
+
+.heroContact {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 10em 0;
+  background: linear-gradient(to right, rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url("../public/assets/images/common-bg.svg");
+}
+.heroContact__content {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: center;
+  display: flex;
+  text-align: justify;
+}
+.heroContact__content .container {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: stretch;
+  display: flex;
+  width: 40%;
+  height: auto;
+  margin: 2em 0;
+  padding: 2em 0;
+  background-color: white;
+  max-width: 90em;
+  box-shadow: 0 0 10px -5px;
+  border-radius: 0.2em;
+}
+.heroContact__content .container .field {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: normal;
+  align-items: flex-start;
+  display: flex;
+}
+.heroContact__content .container .field label {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  color: #666;
+  letter-spacing: 1px;
+}
+.heroContact__content .container .field .input {
+  width: 80%;
+  height: auto;
+  margin: 1em 0;
+  padding: 1em;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  color: #333;
+  border: 1px solid #ebebeb;
+  background: #f0f0f0;
+  border-radius: 5px;
+  outline: none;
+}
+.heroContact__content .container .field .input:focus {
+  outline: 2px solid rgb(0, 81, 255);
+}
+.heroContact__content .container .field .textarea {
+  width: 80%;
+  height: 10em;
+  margin: 1em 0;
+  padding: 1em;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  color: #333;
+  border: 1px solid #ebebeb;
+  background: #f0f0f0;
+  border-radius: 5px;
+  resize: none;
+  outline: none;
+}
+.heroContact__content .container .field .textarea:focus {
+  outline: 2px solid rgb(0, 81, 255);
+}
+.heroContact__content .container .field .message {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  margin: 0;
+  padding: 1em;
+}
+
+.heroProject {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 10em 0;
+}
+.heroProject__content {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: center;
+  display: flex;
+  text-align: justify;
+}
+.heroProject__content .container {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: center;
+  display: flex;
+  width: 90%;
+  height: auto;
+  margin: 2em 0 0 0;
+  padding: 0;
+  max-width: 90em;
+}
+.heroProject__content .container__left {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  width: 50%;
+  height: auto;
+  margin: 1em;
+  padding: 0;
+}
+.heroProject__content .container__left p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5em;
+  line-height: 1.5;
+  font-family: Source Sans Pro;
+}
+.heroProject__content .container__right {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: flex-start;
+  display: flex;
+  width: 90%;
+  height: auto;
+  margin: auto;
+  padding: 0;
+}
+.heroProject__content .container__right ul {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  list-style-type: square;
+  margin: 1em 0;
+  padding: 0;
+}
+.heroProject__content .container__right ul li {
+  margin: 0.5em 0;
+  padding: 0.5em 0;
+}
+.heroProject__content .container__right .techs {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+}
+.heroProject__content .container__right .techs span {
+  background-color: rgba(153, 153, 153, 0.2);
+  color: #666;
+  text-transform: uppercase;
+  border-radius: 0.2em;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  width: auto;
+  height: auto;
+  margin: 0.5em 1em;
+  padding: 0.5em;
+}
+
+.subHeading {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.1em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  margin: 1em;
+  padding: 0;
+}
+
+/*
+mixin qui regroupe les propriétés majeurs de flexbox
+*/
+/*
+Largeur et hauteur
+*/
+/*
+Marges intérieurs et extérieurs 
+  - allDirections = marges globales ex : (margin:0;)
+  - specificDirections = marges spécifiques ex : (margin-left:0;)
+  - m-amount est la taille 
+*/
+/*
+Regroupe les border-radius top ou bottom
+*/
+/*
+Mixin pour les titres ou paragraphes
+*/
+/*
+Positionnement d'un élément avec directions 
+*/
+/*Ajuste la couleur du texte par rapport à la luminosité du background*/
+.heading1 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 4em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  margin: 0 0 0.2em 0;
+  padding: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.heading2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 3em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  margin: 0 0 0.2em 0;
+  padding: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.heading3 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  margin: 0 0 0.2em 0;
+  padding: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.heading3::after {
+  content: "";
+  position: absolute;
+  top: calc(100% + 0.2em);
+  height: 5px;
+  width: 3rem;
+  background: rgb(0, 81, 255);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+
+.heading4 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.5em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  margin: 0 0 0.2em 0;
+  padding: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.heading5 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.2em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  margin: 0 0 0.2em 0;
+  padding: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.heading6 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  margin: 0 0 0.2em 0;
+  padding: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/*
+mixin qui regroupe les propriétés majeurs de flexbox
+*/
+/*
+Largeur et hauteur
+*/
+/*
+Marges intérieurs et extérieurs 
+  - allDirections = marges globales ex : (margin:0;)
+  - specificDirections = marges spécifiques ex : (margin-left:0;)
+  - m-amount est la taille 
+*/
+/*
+Regroupe les border-radius top ou bottom
+*/
+/*
+Mixin pour les titres ou paragraphes
+*/
+/*
+Positionnement d'un élément avec directions 
+*/
+/*Ajuste la couleur du texte par rapport à la luminosité du background*/
+.footer {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 20em;
+  margin: 0;
+  padding: 1em 0 0 1em;
+  background-color: #f0f0f0;
+  box-shadow: 0 0 20px -10px;
+}
+.footer .container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: center;
+  align-items: normal;
+  display: flex;
+  width: 100%;
+  height: auto;
+  max-width: 70em;
+}
+.footer .container .about {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  margin: 0 1em;
+  padding: 0;
+  width: 55%;
+  height: auto;
+}
+.footer .container .about p {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: Source Sans Pro;
+  width: auto;
+  height: auto;
+  text-align: justify;
+}
+.footer .container .socials {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  width: 40%;
+  height: auto;
+}
+.footer .container .socials ul {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.footer .container .socials ul li {
+  margin: 0 1em;
+  padding: 0;
+}
+.footer span {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1;
+  font-family: Source Sans Pro;
+  margin: 0;
+  padding: 1em 0;
 }

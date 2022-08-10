@@ -1,0 +1,42 @@
+@import "./Variables.module.scss";
+@import "./Mixins.module.scss";
+
+.footer {
+  @include flexbox(column, nowrap, normal, space-between, center, flex);
+  @include widthHeight(100%, 20em);
+  @include marginPadding($allDirections, 0, $specificDirections, 1em 0 0 1em);
+  background-color: #f0f0f0;
+  box-shadow: 0 0 20px -10px;
+  .container {
+    @include flexbox(row, wrap, normal, center, normal, flex);
+    @include widthHeight(100%);
+    max-width: 70em;
+    .about {
+      @include flexbox(column);
+      @include marginPadding($allDirections, 0 1em, $specificDirections, 0);
+      @include widthHeight(55%);
+      p {
+        @include font(normal, 600, 1em, 1.5, Source Sans Pro);
+        @include widthHeight(auto);
+        text-align: justify;
+      }
+    }
+    .socials {
+      @include flexbox(column);
+      //@include marginPadding($allDirections, 0 1em, $specificDirections, 0);
+      @include widthHeight(40%);
+      ul {
+        @include flexbox(row);
+        list-style-type: none;
+        @include marginPadding($allDirections, 0, $specificDirections, 0);
+        li {
+          @include marginPadding($allDirections, 0 1em, $specificDirections, 0);
+        }
+      }
+    }
+  }
+  span {
+    @include font(normal, normal, 1em, 1, Source Sans Pro);
+    @include marginPadding($allDirections, 0, $specificDirections, 1em 0);
+  }
+}

@@ -1,0 +1,80 @@
+@import "./Mixins.module.scss";
+@import "./Variables.module.scss";
+.header,
+.header--isActive {
+  box-shadow: 0 0 20px -10px;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: #f0f0f0;
+  @include flexbox(row);
+
+  .navbar {
+    @include flexbox(row, wrap, normal, space-between, center, flex);
+    @include widthHeight(100%, 6em);
+    @include marginPadding($allDirections, 0, $specificDirections, 0);
+    background-color: #f0f0f0;
+    .navLeft {
+      @include flexbox(row);
+      @include marginPadding($allDirections, 0 1em, $specificDirections, 0);
+      .logo {
+        @include widthHeight(3em);
+      }
+    }
+    .navRight {
+      @include flexbox(row);
+      @include marginPadding($allDirections, 0, $specificDirections, 0);
+      .navLink {
+        @include font(normal, 700, 16px, 1, Source Sans Pro);
+        @include marginPadding($allDirections, 0 1em, $specificDirections, 0);
+        color: black;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .navLink:hover {
+        transition: all 0.5s;
+        color: rgb(0, 94, 255);
+      }
+
+      .burger {
+        color: rgb(0, 81, 255);
+        @include widthHeight(2em);
+      }
+    }
+  }
+}
+
+.header--isActive {
+  @include flexbox(column, wrap, normal, normal, center, flex);
+  @include widthHeight(100%, 100%);
+  transition: all 1s;
+
+  .ulBurger {
+    @include flexbox(column);
+    list-style-type: none;
+    @include marginPadding($allDirections, 0, $specificDirections, 0);
+
+    li {
+      @include marginPadding($allDirections, 0, $specificDirections, 1em 0);
+      .navbarLinkBurger {
+        @include font(normal, 700, 16px, 1, Source Sans Pro);
+        @include marginPadding($allDirections, 0 1em, $specificDirections, 0);
+        color: black;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+@include disappearBurger() {
+  .navRight {
+    margin: 0 1em;
+    padding: 0;
+  }
+  .navRight .burger {
+    display: none;
+  }
+}

@@ -1,0 +1,57 @@
+@import "./Mixins.module.scss";
+@import "./Variables.module.scss";
+
+.heading1 {
+  @include font(normal, 800, 4em, 1, Source Sans Pro);
+  @include marginPadding($allDirections, 0 0 0.2em 0, $allDirections, 0);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.heading2 {
+  @include font(normal, 600, 3em, 1, Source Sans Pro);
+  @include marginPadding($allDirections, 0 0 0.2em 0, $allDirections, 0);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.heading3 {
+  @include font(normal, 600, 2em, 1, Source Sans Pro);
+  @include marginPadding($allDirections, 0 0 0.2em 0, $allDirections, 0);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.heading3::after {
+  content: "";
+  position: absolute;
+  top: calc(100% + 0.2em);
+  height: 5px;
+  width: 3rem;
+  background: rgb(0, 81, 255);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+
+.heading4 {
+  @include font(normal, 600, 1.5em, 1, Source Sans Pro);
+  @include marginPadding($allDirections, 0 0 0.2em 0, $allDirections, 0);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.heading5 {
+  @include font(normal, 600, 1.2em, 1, Source Sans Pro);
+  @include marginPadding($allDirections, 0 0 0.2em 0, $allDirections, 0);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.heading6 {
+  @include font(normal, 600, 1em, 1, Source Sans Pro);
+  @include marginPadding($allDirections, 0 0 0.2em 0, $allDirections, 0);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,325 @@
+{
+  "intro": {
+    "name": "Tournier Maxime",
+    "job": "Développeur frontend",
+    "spec": "React et NodeJS",
+    "text": "Je vous souhaite la bienvenue sur mon portfolio !"
+  },
+
+  "about": {
+    "title": "A Propos",
+    "intro": "Cette section vous permet de découvrir à la fois mes compétences et mes orientations professionnels",
+    "know": "Ce qu'il faut savoir",
+    "skill": "Mes compétences",
+    "skills": [
+      {
+        "frontend": [
+          {
+            "id": 1,
+            "name": "Javascript"
+          },
+          {
+            "id": 2,
+            "name": "React"
+          },
+          {
+            "id": 3,
+            "name": "Html"
+          },
+          {
+            "id": 4,
+            "name": "Css/Scss"
+          },
+          {
+            "id": 5,
+            "name": "Bulma"
+          },
+          {
+            "id": 4,
+            "name": "PrimeReact"
+          }
+        ]
+      },
+      {
+        "backend": [
+          {
+            "id": 1,
+            "name": "NodeJS"
+          },
+          {
+            "id": 2,
+            "name": "ExpressJS"
+          },
+          {
+            "id": 3,
+            "name": "MySQL/MariaDB"
+          },
+          {
+            "id": 4,
+            "name": "MongoDB"
+          },
+          {
+            "id": 5,
+            "name": "Php"
+          },
+          {
+            "id": 6,
+            "name": "Sequelize"
+          },
+          {
+            "id": 7,
+            "name": "Mongoose"
+          }
+        ]
+      }
+    ],
+    "text": "Passionné par les nouvelles technologies. Mes premières expériences en tant que développeur remontent à 2008. Je me suis formé en autodidacte sur le \"site du zéro\" qui est devenu OpenClassRooms. D'abord en apprenant HTML et CSS. Puis c'est en 2016 que j'ai appris PHP et MySQL. Cet apprentissage m'a permis de créer mon premier site internet personnel. En 2021 j'ai décidé de me former pour devenir développeur/intégrateur web notamment sur Javascript, ReactJS et NodeJS."
+  },
+  "realisation": {
+    "title": "Projets",
+    "intro": "Cette section vous permet de découvrir mes projets de formation ainsi que des projets personnels",
+    "projects": [
+      {
+        "id": 1,
+        "project": "Projet 1",
+        "name": "Reservia",
+        "image": "Reservia",
+        "width": 900,
+        "height": 500,
+        "description": "Création d'une page web avec HTML/CSS from scratch. Utilisation d'un système de versionning pour une application. Adaptabilité à tous supports.",
+        "btnDetails": "En savoir plus",
+        "plot": "Vous avez trouvé votre premier stage en tant que développeur web chez Booki, une petite entreprise proposant un outil de planification de vacances ! Son site permet aux usagers de trouver des hébergements et des activités dans la ville de leur choix. Les hébergements peuvent également être filtrés par thématique, par exemple leur budget ou leur ambiance. Un nouveau design basé sur les principes du Material Design vient d’être réalisé par Loïc, designer UI. Avant de valider définitivement le design, l’entreprise a décidé de réaliser un prototype. Vous êtes chargé de créer ce prototype en intégrant la maquette en HTML et CSS. Dans la matinée, Sarah, la CTO, vous envoie un e-mail pour vous donner les derniers détails sur le projet. Vous commencez par vous plonger dans l’étude des maquettes à l’aide d’un papier et d’un crayon. Cela vous permet de définir les grandes sections de la page avant de démarrer votre intégration.",
+        "skills": [
+          "Utilisation d'un système de gestion de version",
+          "Mettre en place son environnement Frontend",
+          "Intégrer du contenu conformément à une maquette",
+          "Intégration d'une version responsive"
+        ],
+        "github": "https://github.com/Hoggy06/TournierMaxime_2_24052021",
+        "link": "reservia",
+        "website": "http://reservia.tourniermaxime.com",
+        "tech": [
+          {
+            "name": "HTML",
+            "color": "html"
+          },
+          {
+            "name": "CSS",
+            "color": "css"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "project": "Projet 2",
+        "name": "OhMyFood",
+        "image": "OhMyFood",
+        "width": 900,
+        "height": 500,
+        "description": "Création d'un site statique avec des animations CSS avancées. Utilisation d'un modèle 7-1 avec une architecture SASS",
+        "btnDetails": "En savoir plus",
+        "skills": [
+          "Assurer une cohérence graphique",
+          "Utilisation d'un système de gestion de version en vue de mise à jour",
+          "Intégration d'effets CSS avancées",
+          "Intégration d'une version responsive",
+          "Création d'un système de navigation moderne"
+        ],
+        "github": "https://github.com/Hoggy06/TournierMaxime_3_14072021",
+        "link": "ohmyfood",
+        "website": "http://ohmyfood.tourniermaxime.com",
+        "tech": [
+          {
+            "name": "SASS",
+            "color": "sass"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "project": "Projet 3",
+        "name": "La Chouette Agence",
+        "image": "LaChouetteAgence",
+        "width": 900,
+        "height": 500,
+        "description": "Optmisation d'un site web existant. Création d'un rapport d'analyse SEO et un rapport d'optimisation pour les différentes versions d'appareils. Utilisation de Lighthouse et GTmetrix. Respect des normes WCAG.",
+        "btnDetails": "En savoir plus",
+        "skills": [
+          "Ecriture d'un code HTML/CSS maintenable",
+          "Assurer l'accessibilité du site web",
+          "Optimiser le référencement d'un site internet",
+          "Utilisation des bonnes pratiques",
+          "Optimiser la taille et la vitesse d'un site web"
+        ],
+        "github": "https://github.com/Hoggy06/TournierMaxime_4_11092021",
+        "link": "la_chouette_agence",
+        "website": "http://lachouetteagence.tourniermaxime.com",
+        "tech": [
+          {
+            "name": "WCAG",
+            "color": "wcag"
+          },
+          {
+            "name": "SEO",
+            "color": "seo"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "project": "Projet 4",
+        "name": "Kanap",
+        "image": "Kanap",
+        "width": 900,
+        "height": 500,
+        "description": "Création d'une plateforme e-commerce avec Javascript Vanilla. Utilisation d'évènements pour intéragir avec les différents éléments. Récupération de données grace à une API. Stocker des données dans le localstorage. Création d'un plan de test",
+        "btnDetails": "En savoir plus",
+        "skills": [
+          "Intéragir avec un web service en utilisant Javascript",
+          "Intéragir avec les évènements Javascript",
+          "Valider des données avec une sources externes",
+          "Création d'un plan de test"
+        ],
+        "github": "https://github.com/Hoggy06/Tournier_Maxime_5_02112021",
+        "link": "kanap",
+        "tech": [
+          {
+            "name": "Javascript",
+            "color": "javascript"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "project": "Projet 5",
+        "name": "Piquante",
+        "image": "Piquante",
+        "width": 900,
+        "height": 500,
+        "description": "Création d'une API sécurisée avec NodeJS et Express. Gérer une base de donée NoSQL avec MongoDB. Création d'une documentation avec Postman.",
+        "btnDetails": "En savoir plus",
+        "skills": [
+          "Implémenter un modèle de donnée logique en adéquation avec les réglementations RGPD et OWASP",
+          "Stocker des données de manière sécurisées",
+          "Implémenter des opérations CRUD sécurisées"
+        ],
+        "github": "https://github.com/Hoggy06/Tournier_Maxime_6_05012022",
+        "link": "piquante",
+        "tech": [
+          {
+            "name": "NodeJS",
+            "color": "nodejs"
+          },
+          {
+            "name": "Express",
+            "color": "express"
+          },
+          {
+            "name": "MongoDB",
+            "color": "mongodb"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "project": "Projet 6",
+        "name": "Groupomania",
+        "image": "Groupomania",
+        "width": 900,
+        "height": 500,
+        "description": "Création d'une application complète avec NodeJS et Sequelize coté backend. Utilisation de la librairie React pour la partie frontend",
+        "btnDetails": "En savoir plus",
+        "skills": [
+          "Authentifier des utilisateurs et maintenir leurs sessions",
+          "Personnaliser du contenu pour un client",
+          "Gérer une base de données SQL",
+          "Intégrer du contenu via la base de données de manière sécurisée"
+        ],
+        "github": "https://github.com/Hoggy06/Tournier_Maxime_7_25022022",
+        "link": "groupomania",
+        "website": "https://groupomania.tourniermaxime.com",
+        "tech": [
+          {
+            "name": "NodeJS",
+            "color": "nodejs"
+          },
+          {
+            "name": "React",
+            "color": "react"
+          },
+          {
+            "name": "Sequelize",
+            "color": "sequelize"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "project": "Project 7",
+        "name": "Videotek",
+        "image": "Videotek",
+        "width": 900,
+        "height": 500,
+        "description": "Création d'un site d'information sur les films/séries. Les utilisateurs peuvent interagir en partageant des critiques, poster un sujet sur un forum, personnaliser leurs profils. Le site utilise l'API TMDB.",
+        "btnDetails": "En savoir plus",
+        "skills": [
+          "Authentifier des utilisateurs et maintenir leurs sessions",
+          "Gérer une base de données SQL",
+          "Intégrer du contenu via la base de données de manière sécurisée",
+          "Intéragir avec une API externe"
+        ],
+        "link": "videotek",
+        "website": "https://videotek.xyz",
+        "tech": [
+          {
+            "name": "NodeJS",
+            "color": "nodejs"
+          },
+          {
+            "name": "React",
+            "color": "react"
+          },
+          {
+            "name": "Sequelize",
+            "color": "sequelize"
+          }
+        ]
+      }
+    ]
+  },
+
+  "career": {
+    "title": "Parcours",
+    "intro": "Cette section vous permet de découvrir mon parcours professionnel",
+    "jobs": [
+      {
+        "id": 1,
+        "job": "Développeur Fullstack",
+        "period": "Mai 2021 - Avril 2022",
+        "location": "En ligne",
+        "company": "OpenClassRooms",
+        "description": "Intégration HTML et CSS à partir d'une maquette. Création d'animations CSS avancées avec SASS. Optimisation SEO d'un site web existant. Création d'un site e-commerce et d'une API sécurisée. Création d'un réseau social d'entreprise avec React."
+      },
+      {
+        "id": 2,
+        "job": "Manutentionnaire",
+        "period": "Octobre 2019 - Juillet 2022",
+        "location": "Carros, France",
+        "company": "Pascal Coste Shopping",
+        "description": "Réceptions, stockages et réapprovisionnements de produits cosmétiques. Evolution dans l'entreprise en qualité de service clientèle. Remboursements, suivi de colis, litiges."
+      },
+      {
+        "id": 3,
+        "job": "Auxiliaire sanitaire",
+        "period": "Octobre 2017 - Mai 2019",
+        "location": "La Valbonne, France",
+        "company": "Armée de Terre",
+        "description": "Secours militaire au combat. Prise en charge des victimes en milieu militaire comme civil. Participations aux opérations Sentinelle et Cuirasse"
+      }
+    ]
+  },
+
+  "contact": {
+    "intro": "Si vous voulez prendre contact, le formulaire ci-dessous est à disposition"
+  }
+}

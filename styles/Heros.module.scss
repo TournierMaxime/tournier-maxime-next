@@ -1,0 +1,347 @@
+@import "./Variables.module.scss";
+@import "./Mixins.module.scss";
+
+.heroIntro {
+  @include widthHeight(100%, 100vh);
+  background: linear-gradient(
+      to right,
+      rgba(245, 245, 245, 0.8),
+      rgba(245, 245, 245, 0.8)
+    ),
+    url("../public/assets/images/common-bg.svg");
+  position: relative;
+
+  &__content {
+    @include flexbox(column, nowrap, normal, normal, center, flex);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include widthHeight(90%);
+    max-width: 90em;
+
+    .heading1 {
+      @include font(normal, 800, 4em, 1, Source Sans Pro);
+      @include marginPadding($allDirections, 0 0 0.2em 0, $allDirections, 0);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .heading2 {
+      @include font(normal, 600, 3em, 1, Source Sans Pro);
+      @include marginPadding($allDirections, 0 0 0.2em 0, $allDirections, 0);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .links {
+      @include marginPadding($allDirections, 1em 0, $allDirections, 0);
+    }
+
+    p {
+      @include font(normal, normal, 1.5em, 1.5, Source Sans Pro);
+      text-align: justify;
+      @include widthHeight(50%);
+    }
+  }
+}
+
+.heroAboutMe {
+  @include widthHeight(100%);
+  @include marginPadding($allDirections, 0, $allDirections, 10em 0);
+
+  &__content {
+    @include flexbox(column, nowrap, normal, normal, center, flex);
+    text-align: justify;
+
+    .container {
+      @include flexbox(row, nowrap, normal, space-between, normal, flex);
+      @include widthHeight(90%);
+      @include marginPadding($allDirections, 2em 0 0 0, $allDirections, 0);
+      max-width: 90em;
+
+      &__left {
+        @include flexbox(row);
+        @include widthHeight(50%);
+        @include marginPadding($allDirections, 1em, $allDirections, 0);
+        p {
+          @include font(normal, normal, 1.5em, 1.5, Source Sans Pro);
+        }
+      }
+
+      &__right {
+        @include flexbox(column);
+        @include widthHeight(50%);
+        @include marginPadding($allDirections, 1em, $allDirections, 0);
+        ul {
+          @include flexbox(row);
+          list-style-type: none;
+          @include marginPadding($allDirections, 0 0.5em, $allDirections, 0);
+          li {
+            @include marginPadding(
+              $allDirections,
+              1em 0,
+              $allDirections,
+              0.5em
+            );
+            span {
+              background-color: rgba(153, 153, 153, 0.2);
+              color: #666;
+              text-transform: uppercase;
+              border-radius: 0.2em;
+              text-align: center;
+              @include font(normal, normal, 1em, 1, Source Sans Pro);
+              @include widthHeight(4em);
+              @include marginPadding($allDirections, 0, $allDirections, 0.5em);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.heroProjects {
+  @include widthHeight(100%);
+  @include marginPadding($allDirections, 0, $allDirections, 10em 0);
+
+  &__content {
+    @include flexbox(column, nowrap, normal, normal, center, flex);
+    text-align: justify;
+
+    .container {
+      @include flexbox(row, wrap, normal, space-between, normal, flex);
+      @include widthHeight(90%);
+      @include marginPadding($allDirections, 2em 0 0 0, $allDirections, 0);
+      max-width: 90em;
+
+      &__left {
+        @include flexbox(column);
+        @include widthHeight(50%);
+        @include marginPadding($allDirections, 1em, $allDirections, 0);
+        p {
+          @include font(normal, normal, 1.5em, 1.5, Source Sans Pro);
+        }
+      }
+
+      &__right {
+        @include flexbox(column, nowrap, normal, center, center, flex);
+        @include widthHeight(40%);
+        @include marginPadding($allDirections, 1em, $allDirections, 0);
+        ul {
+          @include flexbox(row);
+          list-style-type: none;
+          @include marginPadding($allDirections, 0 0.5em, $allDirections, 0);
+          li {
+            @include marginPadding(
+              $allDirections,
+              1em 0,
+              $allDirections,
+              0.5em
+            );
+            span {
+              background-color: rgba(153, 153, 153, 0.2);
+              color: #666;
+              text-transform: uppercase;
+              border-radius: 0.2em;
+              text-align: center;
+              @include font(normal, normal, 1em, 1, Source Sans Pro);
+              @include widthHeight(4em);
+              @include marginPadding($allDirections, 0, $allDirections, 0.5em);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.heroCareer {
+  @include widthHeight(100%);
+  @include marginPadding($allDirections, 0, $allDirections, 10em 0);
+
+  &__content {
+    @include flexbox(column, nowrap, normal, normal, center, flex);
+    text-align: justify;
+
+    .container {
+      @include flexbox(row, wrap, normal, space-between, normal, flex);
+      @include widthHeight(90%);
+      @include marginPadding($allDirections, 2em 0 0 0, $allDirections, 0);
+      max-width: 90em;
+
+      &__left {
+        @include flexbox(column);
+        @include widthHeight(45%);
+        @include marginPadding($allDirections, 1em, $allDirections, 0);
+        p {
+          @include font(normal, normal, 1.5em, 1.5, Source Sans Pro);
+        }
+      }
+
+      &__right {
+        @include flexbox(column, nowrap, normal, center, center, flex);
+        @include widthHeight(50%);
+        @include marginPadding($allDirections, 1em, $allDirections, 0);
+        ul {
+          @include flexbox(row);
+          list-style-type: none;
+          @include marginPadding($allDirections, 0 0.5em, $allDirections, 0);
+          li {
+            @include marginPadding(
+              $allDirections,
+              1em 0,
+              $allDirections,
+              0.5em
+            );
+            span {
+              background-color: rgba(153, 153, 153, 0.2);
+              color: #666;
+              text-transform: uppercase;
+              border-radius: 0.2em;
+              text-align: center;
+              @include font(normal, normal, 1em, 1, Source Sans Pro);
+              @include widthHeight(4em);
+              @include marginPadding($allDirections, 0, $allDirections, 0.5em);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.heroContact {
+  @include widthHeight(100%);
+  @include marginPadding($allDirections, 0, $allDirections, 10em 0);
+  background: linear-gradient(
+      to right,
+      rgba(245, 245, 245, 0.8),
+      rgba(245, 245, 245, 0.8)
+    ),
+    url("../public/assets/images/common-bg.svg");
+
+  &__content {
+    @include flexbox(column, nowrap, normal, normal, center, flex);
+    text-align: justify;
+
+    .container {
+      @include flexbox(column, nowrap, normal, normal, stretch, flex);
+      @include widthHeight(40%);
+      @include marginPadding($allDirections, 2em 0, $allDirections, 2em 0);
+      background-color: white;
+      max-width: 90em;
+      box-shadow: 0 0 10px -5px;
+      border-radius: 0.2em;
+
+      .field {
+        @include flexbox(column, wrap, center, normal, flex-start, flex);
+
+        label {
+          @include font(normal, 700, 1em, 1, Source Sans Pro);
+          color: #666;
+          letter-spacing: 1px;
+        }
+        .input {
+          @include widthHeight(80%);
+          @include marginPadding($allDirections, 1em 0, $allDirections, 1em);
+          @include font(normal, 600, 1em, 1, Source Sans Pro);
+          color: #333;
+          border: 1px solid #ebebeb;
+          background: #f0f0f0;
+          border-radius: 5px;
+          outline: none;
+        }
+        .input:focus {
+          outline: 2px solid rgb(0, 81, 255);
+        }
+        .textarea {
+          @include widthHeight(80%, 10em);
+          @include marginPadding($allDirections, 1em 0, $allDirections, 1em);
+          @include font(normal, 600, 1em, 1, Source Sans Pro);
+          color: #333;
+          border: 1px solid #ebebeb;
+          background: #f0f0f0;
+          border-radius: 5px;
+          resize: none;
+          outline: none;
+        }
+        .textarea:focus {
+          outline: 2px solid rgb(0, 81, 255);
+        }
+        .message {
+          @include font(normal, normal, 1em, 1, Source Sans Pro);
+          @include marginPadding($allDirections, 0, $allDirections, 1em);
+        }
+      }
+    }
+  }
+}
+
+.heroProject {
+  @include widthHeight(100%);
+  @include marginPadding($allDirections, 0, $allDirections, 10em 0);
+
+  &__content {
+    @include flexbox(column, nowrap, normal, normal, center, flex);
+    text-align: justify;
+
+    .container {
+      @include flexbox(column, wrap, normal, normal, center, flex);
+      @include widthHeight(90%);
+      @include marginPadding($allDirections, 2em 0 0 0, $allDirections, 0);
+      max-width: 90em;
+
+      &__left {
+        @include flexbox(column);
+        @include widthHeight(50%);
+        @include marginPadding($allDirections, 1em, $allDirections, 0);
+        p {
+          @include font(normal, normal, 1.5em, 1.5, Source Sans Pro);
+        }
+      }
+
+      &__right {
+        @include flexbox(column, wrap, normal, normal, flex-start, flex);
+        @include widthHeight(90%);
+        @include marginPadding($allDirections, auto, $allDirections, 0);
+        ul {
+          @include flexbox(column);
+          list-style-type: square;
+          @include marginPadding($allDirections, 1em 0, $allDirections, 0);
+          li {
+            @include marginPadding(
+              $allDirections,
+              0.5em 0,
+              $allDirections,
+              0.5em 0
+            );
+          }
+        }
+        .techs {
+          @include flexbox(row);
+          span {
+            background-color: rgba(153, 153, 153, 0.2);
+            color: #666;
+            text-transform: uppercase;
+            border-radius: 0.2em;
+            text-align: center;
+            @include font(normal, normal, 1em, 1, Source Sans Pro);
+            @include widthHeight(auto);
+            @include marginPadding(
+              $allDirections,
+              0.5em 1em,
+              $allDirections,
+              0.5em
+            );
+          }
+        }
+      }
+    }
+  }
+}
+
+.subHeading {
+  @include font(normal, 500, 1.1em, 1, Source Sans Pro);
+  @include marginPadding($allDirections, 1em, $allDirections, 0);
+}

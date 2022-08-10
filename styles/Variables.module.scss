@@ -1,0 +1,45 @@
+// Set your brand colors
+$purple: #8a4d76;
+$pink: #fa7c91;
+$brown: #757763;
+$beige-light: #d0d1cd;
+$beige-lighter: #eff0eb;
+$html: rgb(255, 136, 0);
+$css: rgb(0, 89, 255);
+$sass: rgb(225, 0, 255);
+$wcag: rgb(255, 166, 0);
+$seo: rgb(255, 217, 0);
+$javascript: rgb(255, 208, 0);
+$nodejs: rgb(0, 94, 39);
+$express: rgb(0, 139, 74);
+$mongodb: rgb(0, 185, 40);
+$react: rgb(0, 97, 177);
+$sequelize: rgb(0, 162, 255);
+$navbarColor: rgb(7 7 22);
+$aquamarine: rgb(98, 250, 214);
+$mainBackground: rgb(10, 25, 47);
+$lavander: rgb(204, 214, 246);
+$slategray: rgb(112, 123, 151);
+$lightNavy: rgb(17, 34, 64);
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$link: $pink;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: $beige-lighter;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+//Variables pour les mixins marginPadding
+$allDirections: allDirection;
+$specificDirections: specificDirections;
+
+//Breakpoints
+$tablet: 426px;

@@ -1,0 +1,115 @@
+@import "./Mixins.module.scss";
+@import "./Variables.module.scss";
+
+.body {
+  @include marginPadding(allDirection, 0, allDirection, 0);
+  background-color: white;
+  font-family: Source Sans Pro;
+}
+
+#__next {
+  @include flexbox(column, nowrap, normal, normal, center, flex);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.pJustify {
+  text-align: justify;
+  @include font(normal, normal, 1em, 1.5, Source Sans Pro);
+  color: $aquamarine;
+}
+
+.widthHeight {
+  @include widthHeight(100%);
+}
+.link {
+  a {
+    text-decoration: none;
+    @include marginPadding($allDirections, 0 1em 0 0, $allDirections, 0);
+  }
+}
+
+.mainIndex {
+  @include flexbox(column, wrap, normal, normal, center, flex);
+  @include widthHeight(100%);
+  position: relative;
+  top: 25em;
+  border-radius: 1em;
+  @include marginPadding($allDirections, 25em 0 5em 0, $allDirections, 0);
+  flex: auto;
+}
+
+.list {
+  ul {
+    list-style-type: none;
+    @include marginPadding($allDirections, 1em, $allDirections, 1em);
+  }
+}
+
+.socialNetworks {
+  border-left: 1px solid $aquamarine;
+  position: fixed;
+  bottom: 10em;
+  left: 10em;
+  li {
+    @include marginPadding($allDirections, 0 0 2em 0, $allDirections, 0);
+    svg {
+      color: $aquamarine;
+      @include widthHeight(3em);
+    }
+  }
+}
+
+.intro {
+  @include flexbox(column, nowrap, normal, normal, flex-start, flex);
+  //@include marginPadding($allDirections, 25vh 0 40vh 0, $allDirections, 0);
+  min-height: 70vh;
+  .myNameIs {
+    color: $aquamarine;
+  }
+  .name {
+    color: $lavander;
+    @include font(normal, bold, 5em, 1, Source Sans Pro);
+    @include marginPadding($allDirections, 0 0 0.3em 0, $allDirections, 0);
+  }
+  .job {
+    color: $slategray;
+    @include font(normal, normal, 4em, 1, Source Sans Pro);
+    @include marginPadding($allDirections, 0, $allDirections, 0);
+  }
+}
+
+.pIntro {
+  color: $aquamarine;
+  @include flexbox(column);
+  @include font(normal, normal, 1em, 1.5, Source Sans Pro);
+  @include widthHeight(70%);
+}
+
+.aboutMe {
+  @include flexbox(row, wrap, normal, space-between, normal, flex);
+  @include widthHeight(100%);
+  @include marginPadding($allDirections, 0 0 10em 0, $allDirections, 0);
+  &__P {
+    @include flexbox(column);
+    @include widthHeight(70%);
+    @include font(normal, normal, 1.2em, 1.5, Source Sans Pro);
+    color: $lavander;
+  }
+  .imageContainer {
+    @include flexbox(row);
+    @include widthHeight(25%, 100%);
+    background-color: $aquamarine;
+    border-radius: 0.2em;
+    @include marginPadding($allDirections, 0, $allDirections, 0.2em);
+
+    .imageProfil {
+      @include flexbox(row);
+      @include widthHeight(100%);
+      filter: grayscale(100%) contrast(1);
+      mix-blend-mode: multiply;
+      border-radius: 0.2em;
+    }
+  }
+}

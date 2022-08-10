@@ -1,0 +1,10 @@
+@import "./Variables.module.scss";
+.project {
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  border-bottom: 0px solid $aquamarine;
+}
+
+.project:hover {
+  border-bottom: 4px solid $aquamarine;
+}
