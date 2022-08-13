@@ -81,9 +81,7 @@ export default function Project({ data }) {
 
 export async function getStaticProps(context) {
   const id = context.params.id;
-  const response = await fetch(
-    `https://tmnext.tourniermaxime.name/api/data/${id}`
-  );
+  const response = await fetch(`${process.env.DOMAIN_NAME}/api/data/${id}`);
   const data = await response.json();
   return {
     props: {
@@ -93,7 +91,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const response = await fetch(`https://tmnext.tourniermaxime.name/api/data`);
+  const response = await fetch(`${process.env.DOMAIN_NAME}/api/data`);
   const data = await response.json();
   const paths = data.realisation.projects.map((i) => ({
     params: { id: i.id.toString() },
