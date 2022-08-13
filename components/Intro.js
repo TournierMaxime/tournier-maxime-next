@@ -1,15 +1,19 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Link from "next/link";
-export default function Intro({ data }) {
+export default function Intro({ data, language }) {
   return (
     <section className="heroIntro">
       <div className="heroIntro__content">
-        <h1 className="heading1">{data.intro.name}</h1>
-        <h2 className="heading2">{data.intro.job}</h2>
-        <p>{data.intro.text}</p>
-        <Link href="/#projects">
-          <a className="btn">Projets</a>
-        </Link>
+        {data[language].map((i, key) => (
+          <div key={key}>
+            <h1 className="heading1">{i.intro.name}</h1>
+            <h2 className="heading2">{i.intro.job}</h2>
+            <p>{i.intro.text}</p>
+            <Link href="/#projects">
+              <a className="btn">Projets</a>
+            </Link>
+          </div>
+        ))}
       </div>
       <style jsx>{`
         @media screen and (max-width: 425px) {

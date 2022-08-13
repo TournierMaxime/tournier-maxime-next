@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import "../styles/Buttons.module.scss";
 import "../styles/Footer.module.scss";
 import "../styles/Heros.module.scss";
@@ -12,19 +12,21 @@ import Career from "../components/Career";
 import Contact from "../components/Contact/Contact";
 import "animate.css/animate.min.css";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import { LanguageContext } from "./_app";
 export default function Home({ data }) {
+  const { language } = useContext(LanguageContext);
   return (
     <Fragment>
-      <Intro data={data} />
-      {/*<AnimationOnScroll animateOnce={true} animateIn="animate__bounceIn"></AnimationOnScroll>*/}
-      <About data={data} />
-      {/*<AnimationOnScroll animateOnce={true} animateIn="animate__fadeInUp"></AnimationOnScroll>*/}
+      <Intro data={data} language={language} />
+
+      {/*<About data={data} />
+
       <Projects data={data} />
 
-      {/*<AnimationOnScroll animateOnce={true} animateIn="animate__fadeInUp"></AnimationOnScroll>*/}
+
       <Career data={data} />
 
-      <Contact data={data} />
+  <Contact data={data} />*/}
     </Fragment>
   );
 }

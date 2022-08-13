@@ -1,8 +1,9 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
+import { LanguageContext } from "./_app";
 export default function Project({ data }) {
+  const { language } = useContext(LanguageContext);
   return (
     <Fragment>
       <section className="heroIntro">
@@ -93,7 +94,7 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   const response = await fetch(`${process.env.DOMAIN_NAME}/api/data`);
   const data = await response.json();
-  const paths = data.realisation.projects.map((i) => ({
+  const paths = data[language].realisation.projects.map((i) => ({
     params: { id: i.id.toString() },
   }));
   return {
