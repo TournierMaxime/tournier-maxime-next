@@ -25,6 +25,7 @@ export default function Projects({ data }) {
                     alt={i.name}
                     height={i.height}
                     width={i.width}
+                    unoptimized={true}
                   />
                 </div>
                 <div className="container__right">

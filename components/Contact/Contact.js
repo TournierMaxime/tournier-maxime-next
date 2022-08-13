@@ -22,7 +22,7 @@ export default function Contact({ data }) {
       email: datas.email,
       message: datas.message,
     };
-    fetch("/api/data/contact", {
+    fetch(`http://195.179.193.97:3005/api/contact`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
