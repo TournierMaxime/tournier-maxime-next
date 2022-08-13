@@ -30,7 +30,7 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
-  const response = await fetch(`${process.env.DOMAIN_NAME}/api/data`);
+  const response = await fetch(`https://tmnext.tourniermaxime.name/api/data`);
   const data = await response.json();
   return {
     props: {

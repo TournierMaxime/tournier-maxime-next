@@ -45,26 +45,35 @@ export default function Nav({ children }) {
           <ul className="ulBurger">
             <li>
               <Link href={`/#about`}>
-                <a className="navbarLinkBurger">A Propos</a>
+                <a onClick={handleBurger} className="navbarLinkBurger">
+                  A Propos
+                </a>
               </Link>
             </li>
             <li>
               <Link href={"/#projects"}>
-                <a className="navbarLinkBurger">Projets</a>
+                <a onClick={handleBurger} className="navbarLinkBurger">
+                  Projets
+                </a>
               </Link>
             </li>
             <li>
               <Link href={"/#career"}>
-                <a className="navbarLinkBurger">Parcours</a>
+                <a onClick={handleBurger} className="navbarLinkBurger">
+                  Parcours
+                </a>
               </Link>
             </li>
             <li>
               <Link href={"/#contact"}>
-                <a className="navbarLinkBurger">Contact</a>
+                <a onClick={handleBurger} className="navbarLinkBurger">
+                  Contact
+                </a>
               </Link>
             </li>
             <li>
               <a
+                onClick={handleBurger}
                 className="navbarLinkBurger"
                 href={"https://github.com/Hoggy06"}
               >
@@ -73,6 +82,7 @@ export default function Nav({ children }) {
             </li>
             <li>
               <a
+                onClick={handleBurger}
                 className="navbarLinkBurger"
                 href={"https://www.linkedin.com/in/maxime-tournier-523820113/"}
               >

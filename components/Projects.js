@@ -25,13 +25,12 @@ export default function Projects({ data }) {
                     alt={i.name}
                     height={i.height}
                     width={i.width}
-                    unoptimized={true}
                   />
                 </div>
                 <div className="container__right">
                   <h4 className="heading4">{i.name}</h4>
                   <p>{i.description}</p>
-                  <Link href={`/project/${i.id}`}>
+                  <Link href={`/${i.id}`}>
                     <a className="btn">En savoir plus</a>
                   </Link>
                 </div>

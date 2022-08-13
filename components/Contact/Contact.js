@@ -22,7 +22,7 @@ export default function Contact({ data }) {
       email: datas.email,
       message: datas.message,
     };
-    fetch(`http://195.179.193.97:3005/api/contact`, {
+    fetch(`https://tmnext.tourniermaxime.name/api/contact`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -39,6 +39,7 @@ export default function Contact({ data }) {
       .catch((error) => {
         console.log(error);
       });
+    setDatas("");
     setError("");
     setSuccess("");
   };

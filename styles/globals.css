@@ -674,7 +674,9 @@ Positionnement d'un élément avec directions
   font-size: 1.5em;
   line-height: 1.5;
   font-family: Source Sans Pro;
-  text-align: justify;
+  text-align: center;
+  width: 90%;
+  height: auto;
 }
 
 .heroAboutMe {

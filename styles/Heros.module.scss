@@ -40,7 +40,8 @@
 
     p {
       @include font(normal, normal, 1.5em, 1.5, Source Sans Pro);
-      text-align: justify;
+      text-align: center;
+      @include widthHeight(90%);
     }
   }
 }

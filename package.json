@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sass": "sass styles/globals.scss:styles/globals.css --watch --no-source-map",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "sass": "sass styles/globals.scss:styles/globals.css --watch --no-source-map"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.1.2",
