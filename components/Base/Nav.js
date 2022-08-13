@@ -7,7 +7,10 @@ import Image from "next/image";
 import "../../styles/Navbar.module.scss";
 import "../../styles/Buttons.module.scss";
 import { useRouter } from "next/router";
+import { LanguageContext } from "../../pages/_app";
+import { useContext } from "react";
 export default function Nav({ children }) {
+  const { language, toogleLanguage } = useContext(LanguageContext);
   const router = useRouter();
   const [burger, setBurger] = useState(false);
   const handleBurger = () => {
@@ -127,6 +130,19 @@ export default function Nav({ children }) {
               <Link href={"/#contact"}>
                 <a className="navLink">Contact</a>
               </Link>
+              {language === 0 ? (
+                <Link href={"/"}>
+                  <a className="navLink" onClick={toogleLanguage}>
+                    EN
+                  </a>
+                </Link>
+              ) : (
+                <Link href={"/"}>
+                  <a className="navLink" onClick={toogleLanguage}>
+                    FR
+                  </a>
+                </Link>
+              )}
             </div>
           </nav>
         </header>
