@@ -43,6 +43,10 @@
       text-align: center;
       @include widthHeight(90%);
     }
+
+    .btn {
+      text-align: center;
+    }
   }
 }
 
