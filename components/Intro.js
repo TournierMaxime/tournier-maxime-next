@@ -5,14 +5,14 @@ export default function Intro({ data, language }) {
     <section className="heroIntro">
       <div className="heroIntro__content">
         {data[language].map((i, key) => (
-          <div key={key}>
+          <Fragment key={key}>
             <h1 className="heading1">{i.intro.name}</h1>
             <h2 className="heading2">{i.intro.job}</h2>
             <p>{i.intro.text}</p>
             <Link href="/#projects">
-              <a className="btn">Projets</a>
+              <a className="btn">{i.intro.btn}</a>
             </Link>
-          </div>
+          </Fragment>
         ))}
       </div>
       <style jsx>{`

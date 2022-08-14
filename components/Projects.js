@@ -9,34 +9,38 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Videotek from "../public/assets/images/Videotek.webp";
 import Logo from "../public/assets/images/Reservia.png";
 import Link from "next/link";
-export default function Projects({ data }) {
+export default function Projects({ data, language }) {
   return (
     <Fragment>
       <section className="heroProjects" id="projects">
         <div className="heroProjects__content">
-          <h3 className="heading3">{data.realisation.title}</h3>
-          <span className="subHeading">{data.realisation.intro}</span>
-          <div className="container">
-            {data.realisation.projects.map((i, key) => (
-              <Fragment key={key}>
-                <div className="container__left">
-                  <Image
-                    src={`/../public/assets/images/${i.image}.png`}
-                    alt={i.name}
-                    height={i.height}
-                    width={i.width}
-                  />
-                </div>
-                <div className="container__right">
-                  <h4 className="heading4">{i.name}</h4>
-                  <p>{i.description}</p>
-                  <Link href={`/${i.id}`}>
-                    <a className="btn">En savoir plus</a>
-                  </Link>
-                </div>
-              </Fragment>
-            ))}
-          </div>
+          {data[language].map((i, key) => (
+            <Fragment key={key}>
+              <h3 className="heading3">{i.realisation.title}</h3>
+              <span className="subHeading">{i.realisation.intro}</span>
+              <div className="container">
+                {i.realisation.projects.map((j, key) => (
+                  <Fragment key={key}>
+                    <div className="container__left">
+                      <Image
+                        src={`/../public/assets/images/${j.image}.png`}
+                        alt={j.name}
+                        height={j.height}
+                        width={j.width}
+                      />
+                    </div>
+                    <div className="container__right">
+                      <h4 className="heading4">{j.name}</h4>
+                      <p>{j.description}</p>
+                      <Link href={`/${j.id}`}>
+                        <a className="btn">{j.more}</a>
+                      </Link>
+                    </div>
+                  </Fragment>
+                ))}
+              </div>
+            </Fragment>
+          ))}
         </div>
       </section>
       <style jsx>{`

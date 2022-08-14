@@ -6,78 +6,86 @@ import {
   faLocationDot,
   faBriefcase,
 } from "@fortawesome/free-solid-svg-icons";
-export default function Career({ data }) {
+export default function Career({ data, language }) {
   return (
     <Fragment>
       <section className="heroCareer" id="career">
         <div className="heroCareer__content">
-          <h3 className="heading3">{data.career.title}</h3>
-          <span className="subHeading">{data.career.intro}</span>
-          <div className="timeline list">
-            {data.career.jobs.map((i, index) => {
-              const nb = i.id;
-              return (
-                <div key={index}>
-                  {nb % 2 === 0 ? (
-                    <div className="timeline__container left">
-                      <div className="timeline__container--content">
-                        <h6 className="heading6">{i.period}</h6>
-                        <ul className="timeline__List">
-                          <li className="timeline__List--Item">
-                            <span className="timeline__SubHeading">
-                              <FontAwesomeIcon icon={faBriefcase} />
-                              {i.job}
-                            </span>
-                          </li>
-                          <li className="timeline__List--Item">
-                            <span className="timeline__SubHeading">
-                              <FontAwesomeIcon icon={faBuilding} />
-                              {i.company}
-                            </span>
-                          </li>
-                          <li className="timeline__List--Item">
-                            <span className="timeline__SubHeading">
-                              <FontAwesomeIcon icon={faLocationDot} />
-                              {i.location}
-                            </span>
-                          </li>
-                        </ul>
+          {data[language].map((i, key) => (
+            <Fragment key={key}>
+              <h3 className="heading3">{i.career.title}</h3>
+              <span className="subHeading">{i.career.intro}</span>
+              <div className="timeline list">
+                {i.career.jobs.map((j, index) => {
+                  const nb = j.id;
+                  return (
+                    <div key={index}>
+                      {nb % 2 === 0 ? (
+                        <div className="timeline__container left">
+                          <div className="timeline__container--content">
+                            <h6 className="heading6">{j.period}</h6>
+                            <ul className="timeline__List">
+                              <li className="timeline__List--Item">
+                                <span className="timeline__SubHeading">
+                                  <FontAwesomeIcon icon={faBriefcase} />
+                                  {j.job}
+                                </span>
+                              </li>
+                              <li className="timeline__List--Item">
+                                <span className="timeline__SubHeading">
+                                  <FontAwesomeIcon icon={faBuilding} />
+                                  {j.company}
+                                </span>
+                              </li>
+                              <li className="timeline__List--Item">
+                                <span className="timeline__SubHeading">
+                                  <FontAwesomeIcon icon={faLocationDot} />
+                                  {j.location}
+                                </span>
+                              </li>
+                            </ul>
 
-                        <p className="timeline__P pJustify">{i.description}</p>
-                      </div>
+                            <p className="timeline__P pJustify">
+                              {j.description}
+                            </p>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="timeline__container right">
+                          <div className="timeline__container--content">
+                            <h6 className="heading6">{j.period}</h6>
+                            <ul className="timeline__List">
+                              <li className="timeline__List--Item">
+                                <span className="timeline__SubHeading">
+                                  <FontAwesomeIcon icon={faBriefcase} />
+                                  {j.job}
+                                </span>
+                              </li>
+                              <li className="timeline__List--Item">
+                                <span className="timeline__SubHeading">
+                                  <FontAwesomeIcon icon={faBuilding} />
+                                  {j.company}
+                                </span>
+                              </li>
+                              <li className="timeline__List--Item">
+                                <span className="timeline__SubHeading">
+                                  <FontAwesomeIcon icon={faLocationDot} />
+                                  {j.location}
+                                </span>
+                              </li>
+                            </ul>
+                            <p className="timeline__P pJustify">
+                              {j.description}
+                            </p>
+                          </div>
+                        </div>
+                      )}
                     </div>
-                  ) : (
-                    <div className="timeline__container right">
-                      <div className="timeline__container--content">
-                        <h6 className="heading6">{i.period}</h6>
-                        <ul className="timeline__List">
-                          <li className="timeline__List--Item">
-                            <span className="timeline__SubHeading">
-                              <FontAwesomeIcon icon={faBriefcase} />
-                              {i.job}
-                            </span>
-                          </li>
-                          <li className="timeline__List--Item">
-                            <span className="timeline__SubHeading">
-                              <FontAwesomeIcon icon={faBuilding} />
-                              {i.company}
-                            </span>
-                          </li>
-                          <li className="timeline__List--Item">
-                            <span className="timeline__SubHeading">
-                              <FontAwesomeIcon icon={faLocationDot} />
-                              {i.location}
-                            </span>
-                          </li>
-                        </ul>
-                        <p className="timeline__P pJustify">{i.description}</p>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+                  );
+                })}
+              </div>
+            </Fragment>
+          ))}
         </div>
       </section>
       <style jsx>{`

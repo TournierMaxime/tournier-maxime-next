@@ -1,8 +1,8 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { regexName, regexEmail } from "../Functions/regex";
 
-export default function Contact({ data }) {
+export default function Contact({ data, language }) {
   const [datas, setDatas] = useState({ name: "", email: "", message: "" });
   const [success, setSuccess] = useState(null);
   const [error, setError] = useState(null);
@@ -46,61 +46,65 @@ export default function Contact({ data }) {
   return (
     <section className="heroContact" id="contact">
       <div className="heroContact__content">
-        <h3 className="heading3">Contact</h3>
-        <span className="subHeading">{data.contact.intro}</span>
-        <form onSubmit={handleSubmit} className="container">
-          <div className="field">
-            <label>Nom</label>
-            <input
-              className="input"
-              type="text"
-              name="name"
-              placeholder="Votre nom"
-              onChange={handleChange}
-              value={datas.name}
-            />
-          </div>
-          <div className="field">
-            <label>Email</label>
-            <input
-              className="input"
-              type="email"
-              name="email"
-              placeholder="Votre email"
-              onChange={handleChange}
-              value={datas.email}
-            />
-          </div>
-          <div className="field">
-            <label>Message</label>
-            <textarea
-              className="textarea"
-              name="message"
-              placeholder="Votre message"
-              onChange={handleChange}
-              value={datas.message}
-            ></textarea>
-          </div>
-          <div className="field">
-            <button className="btn" type="submit">
-              Envoyer
-            </button>
-          </div>
-          {error ? (
-            <div className="field">
-              <p className="message" style={{ color: "red" }}>
-                {error}
-              </p>
-            </div>
-          ) : null}
-          {success ? (
-            <div className="field">
-              <p className="message" style={{ color: "green" }}>
-                {success}
-              </p>
-            </div>
-          ) : null}
-        </form>
+        {data[language].map((i, key) => (
+          <Fragment key={key}>
+            <h3 className="heading3">{i.contact.title}</h3>
+            <span className="subHeading">{i.contact.intro}</span>
+            <form onSubmit={handleSubmit} className="container">
+              <div className="field">
+                <label>{i.contact.labelName}</label>
+                <input
+                  className="input"
+                  type="text"
+                  name="name"
+                  placeholder={i.contact.inputName}
+                  onChange={handleChange}
+                  value={datas.name}
+                />
+              </div>
+              <div className="field">
+                <label>{i.contact.labelEmail}</label>
+                <input
+                  className="input"
+                  type="email"
+                  name="email"
+                  placeholder={i.contact.inputEmail}
+                  onChange={handleChange}
+                  value={datas.email}
+                />
+              </div>
+              <div className="field">
+                <label>{i.contact.labelTextarea}</label>
+                <textarea
+                  className="textarea"
+                  name="message"
+                  placeholder={i.contact.textarea}
+                  onChange={handleChange}
+                  value={datas.message}
+                ></textarea>
+              </div>
+              <div className="field">
+                <button className="btn" type="submit">
+                  {i.contact.submit}
+                </button>
+              </div>
+              {error ? (
+                <div className="field">
+                  <p className="message" style={{ color: "red" }}>
+                    {error}
+                  </p>
+                </div>
+              ) : null}
+              {success ? (
+                <div className="field">
+                  <p className="message" style={{ color: "green" }}>
+                    {success}
+                  </p>
+                </div>
+              ) : null}
+            </form>
+          </Fragment>
+        ))}
       </div>
       <style jsx>{`
         @media screen and (max-width: 768px) {

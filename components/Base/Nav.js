@@ -2,16 +2,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import Logo from "../../public/assets/images/logo_TM_2.png";
-import { useState, Fragment, useNavigate } from "react";
+import { useState, Fragment } from "react";
 import Image from "next/image";
 import "../../styles/Navbar.module.scss";
 import "../../styles/Buttons.module.scss";
-import { useRouter } from "next/router";
-import { LanguageContext } from "../../pages/_app";
-import { useContext } from "react";
-export default function Nav({ children }) {
-  const { language, toogleLanguage } = useContext(LanguageContext);
-  const router = useRouter();
+export default function Nav({ data, language, toogleLanguage }) {
   const [burger, setBurger] = useState(false);
   const handleBurger = () => {
     setBurger(!burger);
@@ -92,6 +87,23 @@ export default function Nav({ children }) {
                 Linkedin
               </a>
             </li>
+            {language === 0 ? (
+              <Link href={"/"}>
+                <li onClick={handleBurger}>
+                  <a className="navbarLinkBurger" onClick={toogleLanguage}>
+                    EN
+                  </a>
+                </li>
+              </Link>
+            ) : (
+              <Link href={"/"}>
+                <li onClick={handleBurger}>
+                  <a className="navbarLinkBurger" onClick={toogleLanguage}>
+                    FR
+                  </a>
+                </li>
+              </Link>
+            )}
           </ul>
         </header>
       ) : (
@@ -117,19 +129,22 @@ export default function Nav({ children }) {
                 icon={faBars}
                 onClick={handleBurger}
               />
-
-              <Link href={"/#about"}>
-                <a className="navLink">A Propos</a>
-              </Link>
-              <Link href={"/#projects"}>
-                <a className="navLink">Projets</a>
-              </Link>
-              <Link href={"/#career"}>
-                <a className="navLink">Parcours</a>
-              </Link>
-              <Link href={"/#contact"}>
-                <a className="navLink">Contact</a>
-              </Link>
+              {data[language].map((i, key) => (
+                <Fragment key={key}>
+                  <Link href={"/#about"}>
+                    <a className="navLink">{i.nav.link_1}</a>
+                  </Link>
+                  <Link href={"/#projects"}>
+                    <a className="navLink">{i.nav.link_2}</a>
+                  </Link>
+                  <Link href={"/#career"}>
+                    <a className="navLink">{i.nav.link_3}</a>
+                  </Link>
+                  <Link href={"/#contact"}>
+                    <a className="navLink">{i.nav.link_4}</a>
+                  </Link>
+                </Fragment>
+              ))}
               {language === 0 ? (
                 <Link href={"/"}>
                   <a className="navLink" onClick={toogleLanguage}>
@@ -179,7 +194,6 @@ export default function Nav({ children }) {
           }
         }
       `}</style>
-      {children}
     </Fragment>
   );
 }

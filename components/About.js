@@ -1,37 +1,41 @@
 import React, { Fragment } from "react";
-export default function About({ data }) {
+export default function About({ data, language }) {
   return (
     <Fragment>
       <section className="heroAboutMe" id="about">
         <div className="heroAboutMe__content">
-          <h3 className="heading3">{data.about.title}</h3>
-          <span className="subHeading">{data.about.intro}</span>
-          <div className="container">
-            <div className="container__left">
-              <h4 className="heading4">{data.about.know}</h4>
-              <p>{data.about.text}</p>
-            </div>
-            <div className="container__right">
-              <h4 className="heading4">{data.about.skill}</h4>
-              <br />
-              <h5 className="heading5">Frontend</h5>
-              <ul>
-                {data.about.skills[0].frontend.map((i, key) => (
-                  <li key={key}>
-                    <span>{i.name}</span>
-                  </li>
-                ))}
-              </ul>
-              <h5 className="heading5">Backend</h5>
-              <ul>
-                {data.about.skills[1].backend.map((i, key) => (
-                  <li key={key}>
-                    <span>{i.name}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          {data[language].map((i, key) => (
+            <Fragment key={key}>
+              <h3 className="heading3">{i.about.aboutMe}</h3>
+              <span className="subHeading">{i.about.intro}</span>
+              <div className="container">
+                <div className="container__left">
+                  <h4 className="heading4">{i.about.know}</h4>
+                  <p>{i.about.text}</p>
+                </div>
+                <div className="container__right">
+                  <h4 className="heading4">{i.about.skill}</h4>
+                  <br />
+                  <h5 className="heading5">Frontend</h5>
+                  <ul>
+                    {i.about.skills[0].frontend.map((j, key) => (
+                      <li key={key}>
+                        <span>{j.name}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <h5 className="heading5">Backend</h5>
+                  <ul>
+                    {i.about.skills[1].backend.map((j, key) => (
+                      <li key={key}>
+                        <span>{j.name}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </Fragment>
+          ))}
         </div>
       </section>
       <style jsx>{`
