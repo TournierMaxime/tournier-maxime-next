@@ -678,6 +678,9 @@ Positionnement d'un élément avec directions
   width: 90%;
   height: auto;
 }
+.heroIntro__content .btn {
+  text-align: center;
+}
 
 .heroAboutMe {
   width: 100%;
