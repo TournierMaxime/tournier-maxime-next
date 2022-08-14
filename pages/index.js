@@ -10,23 +10,28 @@ import About from "../components/About";
 import Projects from "../components/Projects";
 import Career from "../components/Career";
 import Contact from "../components/Contact/Contact";
+import Nav from "../components/Base/Nav";
+import Footer from "../components/Base/Footer";
 import "animate.css/animate.min.css";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import { LanguageContext } from "./_app";
 export default function Home({ data }) {
-  const { language } = useContext(LanguageContext);
+  const { language, toogleLanguage } = useContext(LanguageContext);
   return (
     <Fragment>
+      <Nav data={data} language={language} toogleLanguage={toogleLanguage} />
+
       <Intro data={data} language={language} />
 
-      {/*<About data={data} />
+      <About data={data} language={language} />
 
-      <Projects data={data} />
+      <Projects data={data} language={language} />
 
+      <Career data={data} language={language} />
 
-      <Career data={data} />
+      <Contact data={data} language={language} />
 
-  <Contact data={data} />*/}
+      <Footer data={data} language={language} />
     </Fragment>
   );
 }
