@@ -17,7 +17,7 @@ module.exports = {
   },
   images: {
     loader: "akamai",
-    path: "",
+    path: "https://tourniermaxime.com",
   },
   /*experimental: {
     images: {
