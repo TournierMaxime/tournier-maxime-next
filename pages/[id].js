@@ -2,60 +2,70 @@ import React, { Fragment, useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { LanguageContext } from "./_app";
+import Nav from "../components/Base/Nav";
+import Footer from "../components/Base/Footer";
 export default function Project({ data }) {
   const { language } = useContext(LanguageContext);
   return (
     <Fragment>
-      <section className="heroIntro">
-        <div className="heroIntro__content">
-          <h1 className="heading1">{data.name}</h1>
-          <p>{data.description}</p>
-          <div className="links">
-            {data.github ? (
-              <a href={data.github} className="btn" style={{ margin: "0 1em" }}>
-                Github
-              </a>
-            ) : null}
-            {data.website ? (
-              <a
-                href={data.website}
-                className="btn"
-                style={{ margin: "0 1em" }}
-              >
-                Website
-              </a>
-            ) : null}
-          </div>
-        </div>
-      </section>
-      <section className="heroProject">
-        <div className="heroProject__content">
-          <div className="container">
-            <div className="container__left">
-              <Image
-                src={`/../public/assets/images/${data.image}.png`}
-                alt={data.name}
-                height={data.height}
-                width={data.width}
-              />
+      <Fragment>
+        <section className="heroIntro">
+          <div className="heroIntro__content">
+            <h1 className="heading1">{data[language].name}</h1>
+            <p>{data[language].description}</p>
+            <div className="links">
+              {data[language].github ? (
+                <a
+                  href={data[language].github}
+                  className="btn"
+                  style={{ margin: "0 1em" }}
+                >
+                  Github
+                </a>
+              ) : null}
+              {data[language].website ? (
+                <a
+                  href={data[language].website}
+                  className="btn"
+                  style={{ margin: "0 1em" }}
+                >
+                  Website
+                </a>
+              ) : null}
             </div>
-            <div className="container__right">
-              <h4 className="heading4">Skills</h4>
-              <ul>
-                {data.skills.map((i, key) => (
-                  <li key={key}>{i}</li>
-                ))}
-              </ul>
-              <h4 className="heading4">Technologies utilisées</h4>
-              <div className="techs">
-                {data.tech.map((i, key) => (
-                  <span key={key}>{i.name}</span>
-                ))}
+          </div>
+        </section>
+        <section className="heroProject">
+          <div className="heroProject__content">
+            <div className="container">
+              <div className="container__left">
+                <Image
+                  src={`/../public/assets/images/${data[language].image}.png`}
+                  alt={data[language].name}
+                  height={data[language].height}
+                  width={data[language].width}
+                  layout="intrinsic"
+                />
+              </div>
+              <div className="container__right">
+                <h4 className="heading4">{data[language].skillTitle}</h4>
+                <ul>
+                  {data[language].skills.map((i, key) => (
+                    <li key={key}>{i}</li>
+                  ))}
+                </ul>
+                <h4 className="heading4">{data[language].toolsUsed}</h4>
+                <div className="techs">
+                  {data[language].tech.map((i, key) => (
+                    <span key={key}>{i.name}</span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Fragment>
+
       <style jsx>{`
         @media screen and (min-width: 320px) and (max-width: 425px) {
           .heading1 {
@@ -93,8 +103,16 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   const response = await fetch(`${process.env.DOMAIN_NAME}/api/data`);
+
   const data = await response.json();
-  const paths = data[language].realisation.projects.map((i) => ({
+
+  const id = data[0].map((i) =>
+    i.realisation.projects.map((j) => ({ id: j.id.toString() }))
+  );
+
+  const newArray = id.find((i) => i);
+
+  const paths = newArray.map((i) => ({
     params: { id: i.id.toString() },
   }));
   return {
