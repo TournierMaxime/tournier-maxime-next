@@ -1,9 +1,6 @@
 import React, { Fragment, useContext } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { LanguageContext } from "./_app";
-import Nav from "../components/Base/Nav";
-import Footer from "../components/Base/Footer";
 export default function Project({ data }) {
   const { language } = useContext(LanguageContext);
   return (
