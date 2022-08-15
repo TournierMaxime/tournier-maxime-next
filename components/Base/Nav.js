@@ -45,34 +45,40 @@ export default function Nav({ children, data, dataLoaded, language }) {
           </nav>
 
           <ul className="ulBurger">
-            <li>
-              <Link href={`/#about`}>
-                <a onClick={handleBurger} className="navbarLinkBurger">
-                  A Propos
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href={"/#projects"}>
-                <a onClick={handleBurger} className="navbarLinkBurger">
-                  Projets
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href={"/#career"}>
-                <a onClick={handleBurger} className="navbarLinkBurger">
-                  Parcours
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href={"/#contact"}>
-                <a onClick={handleBurger} className="navbarLinkBurger">
-                  Contact
-                </a>
-              </Link>
-            </li>
+            {dataLoaded
+              ? null
+              : data[language].map((i, key) => (
+                  <Fragment key={key}>
+                    <li>
+                      <Link href={"/#about"}>
+                        <a onClick={handleBurger} className="navbarLinkBurger">
+                          {i.nav.link_1}
+                        </a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={"/#projects"}>
+                        <a onClick={handleBurger} className="navbarLinkBurger">
+                          {i.nav.link_2}
+                        </a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={"/#career"}>
+                        <a onClick={handleBurger} className="navbarLinkBurger">
+                          {i.nav.link_3}
+                        </a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={"/#contact"}>
+                        <a onClick={handleBurger} className="navbarLinkBurger">
+                          {i.nav.link_4}
+                        </a>
+                      </Link>
+                    </li>
+                  </Fragment>
+                ))}
             <li>
               <a
                 onClick={handleBurger}
