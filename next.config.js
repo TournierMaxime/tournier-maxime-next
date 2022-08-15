@@ -15,10 +15,10 @@ module.exports = {
     EMAIL_ADDRESS: "tourniermaxime@orange.fr",
     EMAIL_PASSWORD: "s45o1qAHdVeJL419zy6aP0WI",
   },
-  /*images: {
+  images: {
     loader: "akamai",
     path: "",
-  },*/
+  },
   /*experimental: {
     images: {
       unoptimized: true,
