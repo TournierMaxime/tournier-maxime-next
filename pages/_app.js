@@ -17,7 +17,6 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const route = router.route;
   const query = router.query.id;
-  console.log(router);
   useEffect(() => {
     async function getData() {
       const response = await fetch(`${process.env.DOMAIN_NAME}/api/data`);
