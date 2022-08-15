@@ -18,7 +18,7 @@ export default function Footer({ children, data, dataLoaded, language }) {
                 <Fragment key={key}>
                   <div className="about">
                     <h4 className="heading4">{i.about.aboutMe}</h4>
-                    <p>{i.about.text}</p>
+                    <p>{i.footer.text}</p>
                   </div>
                   <div className="socials">
                     <h4 className="heading4">{i.about.socialNetworks}</h4>
