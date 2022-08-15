@@ -11,7 +11,9 @@ export default function About({ data, language }) {
               <div className="container">
                 <div className="container__left">
                   <h4 className="heading4">{i.about.know}</h4>
-                  <p>{i.about.text}</p>
+                  <p>{i.about.text_1}</p>
+                  <p>{i.about.text_2}</p>
+                  <p>{i.about.text_3}</p>
                 </div>
                 <div className="container__right">
                   <h4 className="heading4">{i.about.skill}</h4>
