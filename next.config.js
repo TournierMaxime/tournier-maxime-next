@@ -1,4 +1,6 @@
 const path = require("path");
+const withPlugins = require("next-compose-plugins");
+const withOptimizedImages = require("next-optimized-images");
 
 module.exports = {
   reactStrictMode: false,
@@ -13,4 +15,13 @@ module.exports = {
     EMAIL_ADDRESS: "tourniermaxime@orange.fr",
     EMAIL_PASSWORD: "s45o1qAHdVeJL419zy6aP0WI",
   },
+  /*images: {
+    loader: "akamai",
+    path: "",
+  },*/
+  /*experimental: {
+    images: {
+      unoptimized: true,
+    },
+  },*/
 };
