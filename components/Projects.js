@@ -1,13 +1,5 @@
 import React, { Fragment } from "react";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUpRightFromSquare,
-  faFolderOpen,
-} from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import Videotek from "../public/assets/images/Videotek.webp";
-import Logo from "../public/assets/images/Reservia.png";
 import Link from "next/link";
 export default function Projects({ data, language }) {
   return (
@@ -23,7 +15,7 @@ export default function Projects({ data, language }) {
                   <Fragment key={key}>
                     <div className="container__left">
                       <Image
-                        src={`/../public/assets/images/${j.image}.png`}
+                        src={`/assets/images/${j.image}.png`}
                         alt={j.name}
                         height={j.height}
                         width={j.width}

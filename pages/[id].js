@@ -37,7 +37,7 @@ export default function Project({ data }) {
             <div className="container">
               <div className="container__left">
                 <Image
-                  src={`/../public/assets/images/${data[language].image}.png`}
+                  src={`/assets/images/${data[language].image}.png`}
                   alt={data[language].name}
                   height={data[language].height}
                   width={data[language].width}
