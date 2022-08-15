@@ -4,7 +4,7 @@ import "../../styles/Footer.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-export default function Footer({ data, language }) {
+export default function Footer({ children, data, dataLoaded, language }) {
   const newDate = new Date();
   const currentDate = newDate.getFullYear();
 
@@ -12,29 +12,34 @@ export default function Footer({ data, language }) {
     <Fragment>
       <footer className="footer">
         <div className="container">
-          {data[language].map((i, key) => (
-            <Fragment key={key}>
-              <div className="about">
-                <h4 className="heading4">{i.about.aboutMe}</h4>
-                <p>{i.about.text}</p>
-              </div>
-              <div className="socials">
-                <h4 className="heading4">{i.about.socialNetworks}</h4>
-                <ul>
-                  <li>
-                    <a href="https://github.com/Hoggy06">
-                      <FontAwesomeIcon icon={faGithub} className="icons" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.linkedin.com/in/tourniermaxime/">
-                      <FontAwesomeIcon icon={faLinkedin} className="icons" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </Fragment>
-          ))}
+          {dataLoaded
+            ? null
+            : data[language].map((i, key) => (
+                <Fragment key={key}>
+                  <div className="about">
+                    <h4 className="heading4">{i.about.aboutMe}</h4>
+                    <p>{i.about.text}</p>
+                  </div>
+                  <div className="socials">
+                    <h4 className="heading4">{i.about.socialNetworks}</h4>
+                    <ul>
+                      <li>
+                        <a href="https://github.com/Hoggy06">
+                          <FontAwesomeIcon icon={faGithub} className="icons" />
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.linkedin.com/in/tourniermaxime/">
+                          <FontAwesomeIcon
+                            icon={faLinkedin}
+                            className="icons"
+                          />
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </Fragment>
+              ))}
         </div>
 
         <span>&copy; {currentDate} Made by Tournier Maxime</span>
@@ -65,6 +70,7 @@ export default function Footer({ data, language }) {
           }
         }
       `}</style>
+      {children}
     </Fragment>
   );
 }

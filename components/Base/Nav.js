@@ -2,16 +2,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import Logo from "../../public/assets/images/logo_TM_2.png";
-import { useState, Fragment } from "react";
+import { useState, Fragment, useContext } from "react";
 import Image from "next/image";
 import "../../styles/Navbar.module.scss";
 import "../../styles/Buttons.module.scss";
-export default function Nav({ data, language, toogleLanguage }) {
+import { LanguageContext } from "../../pages/_app";
+import { useRouter } from "next/router";
+export default function Nav({ children, data, dataLoaded, language }) {
+  const { toogleLanguage } = useContext(LanguageContext);
+  const router = useRouter();
+  const pathname = router.asPath;
   const [burger, setBurger] = useState(false);
   const handleBurger = () => {
     setBurger(!burger);
   };
-
   return (
     <Fragment>
       {burger ? (
@@ -88,7 +92,7 @@ export default function Nav({ data, language, toogleLanguage }) {
               </a>
             </li>
             {language === 0 ? (
-              <Link href={"/"}>
+              <Link href={pathname}>
                 <li onClick={handleBurger}>
                   <a className="navbarLinkBurger" onClick={toogleLanguage}>
                     EN
@@ -96,7 +100,7 @@ export default function Nav({ data, language, toogleLanguage }) {
                 </li>
               </Link>
             ) : (
-              <Link href={"/"}>
+              <Link href={pathname}>
                 <li onClick={handleBurger}>
                   <a className="navbarLinkBurger" onClick={toogleLanguage}>
                     FR
@@ -129,30 +133,32 @@ export default function Nav({ data, language, toogleLanguage }) {
                 icon={faBars}
                 onClick={handleBurger}
               />
-              {data[language].map((i, key) => (
-                <Fragment key={key}>
-                  <Link href={"/#about"}>
-                    <a className="navLink">{i.nav.link_1}</a>
-                  </Link>
-                  <Link href={"/#projects"}>
-                    <a className="navLink">{i.nav.link_2}</a>
-                  </Link>
-                  <Link href={"/#career"}>
-                    <a className="navLink">{i.nav.link_3}</a>
-                  </Link>
-                  <Link href={"/#contact"}>
-                    <a className="navLink">{i.nav.link_4}</a>
-                  </Link>
-                </Fragment>
-              ))}
+              {dataLoaded
+                ? null
+                : data[language].map((i, key) => (
+                    <Fragment key={key}>
+                      <Link href={"/#about"}>
+                        <a className="navLink">{i.nav.link_1}</a>
+                      </Link>
+                      <Link href={"/#projects"}>
+                        <a className="navLink">{i.nav.link_2}</a>
+                      </Link>
+                      <Link href={"/#career"}>
+                        <a className="navLink">{i.nav.link_3}</a>
+                      </Link>
+                      <Link href={"/#contact"}>
+                        <a className="navLink">{i.nav.link_4}</a>
+                      </Link>
+                    </Fragment>
+                  ))}
               {language === 0 ? (
-                <Link href={"/"}>
+                <Link href={pathname}>
                   <a className="navLink" onClick={toogleLanguage}>
                     EN
                   </a>
                 </Link>
               ) : (
-                <Link href={"/"}>
+                <Link href={pathname}>
                   <a className="navLink" onClick={toogleLanguage}>
                     FR
                   </a>
@@ -194,6 +200,7 @@ export default function Nav({ data, language, toogleLanguage }) {
           }
         }
       `}</style>
+      {children}
     </Fragment>
   );
 }
