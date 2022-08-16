@@ -21,7 +21,10 @@ export default function Career({ data, language }) {
                   return (
                     <div key={index}>
                       {nb % 2 === 0 ? (
-                        <div className="timeline__container left">
+                        <div
+                          className="timeline__container left"
+                          style={{ width: "60%" }}
+                        >
                           <div className="timeline__container--content">
                             <h6 className="heading6">{j.period}</h6>
                             <ul className="timeline__List">
@@ -44,14 +47,22 @@ export default function Career({ data, language }) {
                                 </span>
                               </li>
                             </ul>
-
-                            <p className="timeline__P pJustify">
-                              {j.description}
-                            </p>
+                            <ul style={{ margin: "0", padding: "0" }}>
+                              {j.description.map((k, index) => (
+                                <li key={index}>
+                                  <p className="timeline__P pJustify">
+                                    {k.text}
+                                  </p>
+                                </li>
+                              ))}
+                            </ul>
                           </div>
                         </div>
                       ) : (
-                        <div className="timeline__container right">
+                        <div
+                          className="timeline__container right"
+                          style={{ width: "60%" }}
+                        >
                           <div className="timeline__container--content">
                             <h6 className="heading6">{j.period}</h6>
                             <ul className="timeline__List">
@@ -74,9 +85,15 @@ export default function Career({ data, language }) {
                                 </span>
                               </li>
                             </ul>
-                            <p className="timeline__P pJustify">
-                              {j.description}
-                            </p>
+                            <ul style={{ margin: "0", padding: "0" }}>
+                              {j.description.map((k, index) => (
+                                <li key={index}>
+                                  <p className="timeline__P pJustify">
+                                    {k.text}
+                                  </p>
+                                </li>
+                              ))}
+                            </ul>
                           </div>
                         </div>
                       )}
@@ -119,6 +136,11 @@ export default function Career({ data, language }) {
           /* Make all right containers behave like the left ones */
           .right {
             left: 0%;
+          }
+        }
+        @media screen and (min-width: 1024px) {
+          .left {
+            left: -11.5em;
           }
         }
       `}</style>

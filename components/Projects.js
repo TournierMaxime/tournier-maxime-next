@@ -19,6 +19,7 @@ export default function Projects({ data, language }) {
                         alt={j.name}
                         height={j.height}
                         width={j.width}
+                        layout="intrinsic"
                       />
                     </div>
                     <div className="container__right">
